@@ -1,0 +1,25 @@
+<h2>Create New Campaign</h2>
+
+<form action="/campaigns" method="POST">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required />
+  </div>
+
+  <div>
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" rows="5" required></textarea>
+  </div>
+
+  <div>
+    <label for="recipients">Recipients (comma-separated):</label>
+    <input type="text" name="recipients" id="recipients" required />
+  </div>
+
+  <div>
+    <label for="scheduledTime">Scheduled Time:</label>
+    <input type="datetime-local" name="scheduledTime" id="scheduledTime" required />
+  </div>
+
+  <button type="submit">Create Campaign</button>
+</form>

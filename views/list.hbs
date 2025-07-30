@@ -1,0 +1,39 @@
+<h2>All Campaigns</h2>
+
+{{#if campaigns.length}}
+  <table border="1" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Scheduled Time</th>
+        <th>Status</th>
+        <th>Recipients</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each campaigns}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.scheduledTime}}</td>
+          <td>{{this.status}}</td>
+          <td>
+            <ul>
+              {{#each this.recipients}}
+                <li>{{this.email}} - {{this.status}}</li>
+              {{/each}}
+            </ul>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+    
+  </table>
+
+  <script>
+    setInterval(()=>{
+      window.location.reload()
+    },5000)
+  </script>
+{{else}}
+  <p>No campaigns found.</p>
+{{/if}}
